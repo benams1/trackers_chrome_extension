@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="libs/bootstrap-4.4.1/css/bootstrap.min.css">
+    <script src="./scripts/index.js" ></script>
+    <link
+    href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+    crossorigin="anonymous"
+  />
+<style>
+    html,
+    body {
+        font-family: "Open Sans", sans-serif;
+        font-size: 14px;
+        margin: 0;
+        min-height: 180px;
+        padding: 0;
+        width: 384px;
+      }
+      .list-group-item{
+          padding: 0 5;
+      }
+      .card-header{
+        padding: 0;
+      }
+</style>
+</head>
+<body>
+    <div class="container text-center">
+        <div class="row justify-content-md-center">
+            <div class="col">
+                <h3>Track The Trackers</h3>
+            </div>
+        </div>
+        <div class="row justify-content-md-center">
+            <div class="col">
+                <div class="container text-center">
+                    <div class="row justify-content-md-center">
+                        <div class="col">
+                            <h4>Current Site Trackers</h4>
+                        </div>
+                    </div>
+                    <div class="row justify-content-md-center">
+                        <div class="col">
+                            <ul class="list-group" id="currentList">
+                        </div>    
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="container text-center">
+                <div class="row justify-content-md-center">
+                    <div class="col">
+                        <h4>Trackers History</h4>
+                    </div>
+                </div>
+                <div class="row justify-content-md-center">
+                    <div class="col">
+                        <div class="accordion" id="trackersAccordion">
+                            <div class="card">
+                                <div class="card-header" id="headingFacebook">
+                                  <h4 class="mb-0">
+                                    <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseFacebook" aria-expanded="true" aria-controls="collapseFacebook">
+                                        Facebook                           
+                                    </button>
+                                  </h4>
+                                </div>
+                                <div id="collapseFacebook" class="collapse " aria-labelledby="headingFacebook" data-parent="#trackersAccordion">
+                                  <div class="card-body">
+                                    <ul id="facebook_list">
+    
+                                    </ul>
+                                  </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="headingTaboola">
+                                  <h4 class="mb-0">
+                                    <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseTaboola" aria-expanded="true" aria-controls="collapseTaboola">
+                                        Taboola                           
+                                    </button>
+                                  </h4>
+                                </div>
+                                <div id="collapseTaboola" class="collapse " aria-labelledby="headingTaboola" data-parent="#trackersAccordion">
+                                  <div class="card-body">
+                                    <ul id="taboola_list">
+    
+                                    </ul>
+                                  </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="headingGoogleAnalytics">
+                                  <h4 class="mb-0">
+                                    <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseGoogleAnalytics" aria-expanded="true" aria-controls="collapseGoogleAnalytics">
+                                        Google Analytics
+                                    </button>
+                                  </h4>
+                                </div>
+                                <div id="collapseGoogleAnalytics" class="collapse " aria-labelledby="headingGoogleAnalytics" data-parent="#trackersAccordion">
+                                  <div class="card-body">
+                                    <ul id="google_analytics_list">
+    
+                                    </ul>
+                                  </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="headingAmazon">
+                                  <h4 class="mb-0">
+                                    <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseAmazon" aria-expanded="true" aria-controls="collapseAmazon">
+                                        Amazon                           
+                                    </button>
+                                  </h4>
+                                </div>
+                                <div id="collapseAmazon" class="collapse " aria-labelledby="headingAmazon" data-parent="#trackersAccordion">
+                                  <div class="card-body">
+                                    <ul id="amazon_list">
+                                        
+                                    </ul>
+                                  </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="headinGgoogleTagManager">
+                                  <h4 class="mb-0">
+                                    <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseGgoogleTagManager" aria-expanded="true" aria-controls="collapseGgoogleTagManager">
+                                        Google Tag Manager                           
+                                    </button>
+                                  </h4>
+                                </div>
+                                <div id="collapseGgoogleTagManager" class="collapse" aria-labelledby="headingGgoogleTagManager" data-parent="#trackersAccordion">
+                                  <div class="card-body">
+                                    <ul id="google_tag_manager_list">
+    
+                                    </ul>
+                                  </div>
+                                </div>
+                            </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <Footer><p>&copy; All the rights reserved to Ben Amsalem & Ohad Aizik</p></Footer>
+            </div>
+        </div>
+    </div>
+    <script src="libs/jquery-3.4.1.slim.min.js"></script>
+    <script src="libs/bootstrap-4.4.1/js/bootstrap.min.js"></script>
+</html>
