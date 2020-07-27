@@ -1,3 +1,4 @@
+const localStorage = window.localStorage;
 const inArray = (arr, needle) => {
     console.log('needle', needle)
     console.log('arr', arr)
@@ -21,6 +22,7 @@ const updateHistory = (host, trackers) => {
             history[key] = pushIfUnique(history[key],host)
         }
     }
+    localStorage.setItem('trackersHistory', JSON.stringify(history))
 }
 const  initialTrackers = {
     google_analytics: false,
@@ -33,14 +35,21 @@ const current = {
     host: '',
     trackers: initialTrackers
 }
-const history = {
-    google_analytics: [],
-    google_tag_manager: [],
-    facebook: [],
-    taboola: [],
-    amazon: [],
+const initialHistory = {
+        google_analytics: [],
+        google_tag_manager: [],
+        facebook: [],
+        taboola: [],
+        amazon: [],
+    }
+let history = localStorage.getItem('trackersHistory')
+console.log('localStorageHistory', history)
+if(!history) {
+    history = initialHistory;
 }
-
+else {
+    history = JSON.parse(history)
+}
 updateTrackers = (host, trackers) => {
     updateCurrent(host, trackers);
     updateHistory(host, trackers);
@@ -53,7 +62,7 @@ const messageListener = (request, sender, sendResponse) =>{
         case 'trackersDetection':
             updateTrackers(website, trackers)
             break;
-        case 'popUpData':
+        case 'popUpDataHisotry':
             sendResponse({history, current})
             break;
     }

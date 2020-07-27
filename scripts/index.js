@@ -22,6 +22,7 @@ const currentHandler = (cur) => {
 }
 const historyHandler = (history) => {
     for(const key in history){
+        console.log('key', key)
         const keyHtmlTag = document.getElementById(`${key}_list`)
         if(history[key].length > 0 ){
             keyHtmlTag.innerHTML = ""
@@ -39,6 +40,6 @@ window.onload = () => {
     const fList = document.getElementById('facebook_list')
     console.log('I am here')
     chrome.runtime.sendMessage({
-        context: "popUpData",
+        context: "popUpDataHisotry",
     },callBack);
 }
